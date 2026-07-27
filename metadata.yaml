@@ -1,5 +1,5 @@
 homepage: "https://daidalytics.com/"
 documentation: "https://daidalytics.com/"
 versions:
-  - sha: 5ea5add97c13152d30a06c64a1b8b7af670283ef
+  - sha: 77531f5d73ca02a8aa0b312ed72ac1533bf92bfc
     changeNotes: Initial release.
