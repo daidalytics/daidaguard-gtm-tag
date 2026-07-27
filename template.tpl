@@ -26,8 +26,7 @@ ___INFO___
   "containerContexts": [
     "WEB"
   ],
-  "securityGroups": [],
-  "tosAccepted": true
+  "securityGroups": []
 }
 
 
