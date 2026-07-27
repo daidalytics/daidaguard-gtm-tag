@@ -7,7 +7,7 @@ var logToConsole = require("logToConsole");
 
 var debug = data.debugMode === true;
 function log(msg) {
-    if (debug) logToConsole("[DaidaGuard] " + msg);
+  if (debug) logToConsole("[DaidaGuard] " + msg);
 }
 
 var dataLayerName = data.dataLayerName || "dataLayer";
@@ -22,16 +22,16 @@ guardRegistry.debugHistory = guardRegistry.debugHistory || [];
 // 2. Safely stage this specific configuration into the pending configuration stack
 //    so the asynchronously loading SDK knows what parameters to match on parse.
 guardRegistry.pendingConfigs.push({
-    orgId: data.orgId,
-    accountId: data.accountId,
-    dataLayerName: dataLayerName
+  orgId: data.orgId,
+  accountId: data.accountId,
+  dataLayerName: dataLayerName
 });
 
 setInWindow("__DAIDA_GUARD__", guardRegistry);
 
 // 3. Set global debug flag if enabled
 if (debug) {
-    setInWindow("_dlvDebugMode", true);
+  setInWindow("_dlvDebugMode", true);
 }
 
 // 4. Force GTM to execute the script IIFE separately for each tag instance via cache-busting
@@ -42,13 +42,13 @@ var uniqueSdkUrl = sdkUrl + separator + "org=" + data.orgId + "&dl=" + dataLayer
 log("Loading SDK instance for dataLayer: " + dataLayerName);
 
 injectScript(
-    uniqueSdkUrl,
-    function () {
-        log("SDK loaded successfully for " + dataLayerName);
-        data.gtmOnSuccess();
-    },
-    function () {
-        log("SDK failed to load for " + dataLayerName);
-        data.gtmOnFailure();
-    }
+  uniqueSdkUrl,
+  function () {
+    log("SDK loaded successfully for " + dataLayerName);
+    data.gtmOnSuccess();
+  },
+  function () {
+    log("SDK failed to load for " + dataLayerName);
+    data.gtmOnFailure();
+  }
 );

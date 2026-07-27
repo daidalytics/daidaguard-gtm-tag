@@ -19,7 +19,7 @@ Before adding the tag, you need:
 
 1. Import the custom template into your GTM container:
    1. In GTM, go to **Templates > Tag Templates > New > Import**.
-   2. Select the `DaidaGuard - dataLayer Validator.tpl` file from this directory.
+   2. Select the `template.tpl` file from this directory.
 2. Create a new tag using the **DaidaGuard - dataLayer Validator** template.
 3. Enter your **Organization ID** and **Account ID**.
 4. Set the trigger to **All Pages** (or your preferred trigger).
